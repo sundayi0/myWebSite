@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 기획 및 구축 실무 가이드 | Web Planning & Architecture</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap');
+    body {
+      font-family: 'Pretendard', sans-serif;
+    }
+    code, pre {
+      font-family: 'Fira Code', monospace;
+    }
+    .gradient-hero {
+      background: radial-gradient(circle at 50% 10%, #1e1b4b 0%, #0f172a 60%, #020617 100%);
+    }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-200 min-h-screen flex flex-col justify-between">
+
+  <!-- 상단 네비게이션 -->
+  <header class="border-b border-slate-800 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-lg shadow-md shadow-indigo-500/20">
+          W
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-base text-white tracking-tight">웹기획 및 구축</span>
+          <span class="text-[10px] text-indigo-400 font-mono">PLANNING TO DEPLOY</span>
+        </div>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
+        <a href="#process" class="hover:text-indigo-400 transition">구축 프로세스</a>
+        <a href="#interactive-ia" class="hover:text-indigo-400 transition">IA 구조도 실습</a>
+        <a href="#tech-stack" class="hover:text-indigo-400 transition">핵심 기술 스택</a>
+        <a href="#checklist" class="hover:text-indigo-400 transition">기획자 체크리스트</a>
+      </nav>
+      <a href="#interactive-ia" class="text-xs bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-3.5 py-2 rounded-lg transition">
+        실습 바로가기
+      </a>
+    </div>
+  </header>
+
+  <!-- 메인 히어로 섹션 -->
+  <main class="flex-1">
+    <section class="gradient-hero py-20 px-4 text-center border-b border-slate-800">
+      <div class="max-w-3xl mx-auto">
+        <div class="inline-flex items-center space-x-2 bg-indigo-950/80 border border-indigo-700/60 px-3.5 py-1.5 rounded-full text-xs font-semibold text-indigo-300 mb-6">
+          <i class="fa-solid fa-compass-drafting text-indigo-400"></i>
+          <span>아이디어 스케치부터 실제 서비스 배포까지</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-5">
+          성공적인 서비스를 만드는<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400">웹 기획 & 아키텍처 구축</span>
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base mb-8 leading-relaxed max-w-2xl mx-auto">
+          단순한 코딩을 넘어, <strong>사용자 요구사항 정의, 화면설계(Wireframe), 정보구조(IA)</strong>를 기획하고 
+          웹 표준 기술과 GitHub을 통해 살아 숨 쉬는 웹 서비스로 완성하는 올인원 커리큘럼입니다.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="#process" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
+            <i class="fa-solid fa-list-check"></i>
+            <span>5단계 구축 로드맵 보기</span>
+          </a>
+          <a href="#interactive-ia" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-sm font-semibold px-6 py-3 rounded-lg transition flex items-center space-x-2">
+            <i class="fa-solid fa-sitemap"></i>
+            <span>화면 구조 기획해보기</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. 웹 구축 5단계 라이프사이클 -->
+    <section id="process" class="py-16 px-4 max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Project Lifecycle</span>
+        <h2 class="text-2xl font-bold text-white mt-1">웹 기획 및 구축의 5단계 로드맵</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">현업 프로젝트가 진행되는 표준 순서와 핵심 산출물입니다.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <!-- 1단계 -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5 hover:border-indigo-500/50 transition">
+          <div class="text-indigo-400 font-mono text-xs font-bold mb-2">PHASE 01</div>
+          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-1">요구사항 정의</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">프로젝트 목적, 타깃 사용자 분석, 서비스 핵심 기능 목록화</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">산출물: 기능정의서</span>
+        </div>
+
+        <!-- 2단계 -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5 hover:border-sky-500/50 transition">
+          <div class="text-sky-400 font-mono text-xs font-bold mb-2">PHASE 02</div>
+          <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-sitemap"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-1">정보구조(IA) 설계</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">사용자 이동 동선(User Flow)과 메뉴 트리 구조 체계화</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">산출물: 메뉴구조도(IA)</span>
+        </div>
+
+        <!-- 3단계 -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition">
+          <div class="text-emerald-400 font-mono text-xs font-bold mb-2">PHASE 03</div>
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-pen-ruler"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-1">화면 UI/UX 기획</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">컴포넌트 배치, 인터랙션 및 예외 처리 정책 구체화</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">산출물: 와이어프레임(SB)</span>
+        </div>
+
+        <!-- 4단계 -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5 hover:border-amber-500/50 transition">
+          <div class="text-amber-400 font-mono text-xs font-bold mb-2">PHASE 04</div>
+          <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-1">프런트엔드 구축</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">웹 표준 HTML5, CSS3 반응형 레이아웃, JS 동적 로직 구현</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">산출물: 소스 코드</span>
+        </div>
+
+        <!-- 5단계 -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5 hover:border-purple-500/50 transition">
+          <div class="text-purple-400 font-mono text-xs font-bold mb-2">PHASE 05</div>
+          <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-1">검증 및 클라우드 배포</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">크로스 브라우징 및 검수 후 GitHub Pages를 통한 실제 론칭</p>
+          <span class="inline-block text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">산출물: 서비스 URL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 인터랙티브 IA & 화면 설계 체험기 -->
+    <section id="interactive-ia" class="py-16 px-4 bg-[#0d1424] border-y border-slate-800">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Interactive Simulation</span>
+          <h2 class="text-2xl font-bold text-white mt-1">인터랙티브 정보구조(IA) 시뮬레이터</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2">왼쪽 기획 메뉴를 클릭하면 실제 웹사이트의 와이어프레임 구조가 어떻게 변화하는지 확인해보세요.</p>
+        </div>
+
+        <div class="bg-[#161f33] border border-slate-800 rounded-2xl overflow-hidden shadow-2xl grid md:grid-cols-12">
+          <!-- 기획 트리 메뉴 (4열) -->
+          <div class="md:col-span-4 bg-[#111927] p-5 border-b md:border-b-0 md:border-r border-slate-800">
+            <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-folder-tree text-indigo-400"></i> 사이트맵 트리 (IA)
+            </h4>
+            <div class="space-y-1.5 text-xs font-medium">
+              <button onclick="changeScreen('home')" id="btn-home" class="w-full text-left px-3 py-2.5 rounded-lg bg-indigo-600 text-white font-semibold flex items-center justify-between transition">
+                <span>1.0 메인 홈 (Home)</span>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+              </button>
+              <button onclick="changeScreen('about')" id="btn-about" class="w-full text-left px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 flex items-center justify-between transition">
+                <span>2.0 서비스 소개 (About)</span>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-600"></i>
+              </button>
+              <button onclick="changeScreen('calc')" id="btn-calc" class="w-full text-left px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 flex items-center justify-between transition">
+                <span>3.0 JS 실습 계산기 (Lab)</span>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-600"></i>
+              </button>
+            </div>
+            <div class="mt-6 p-3 bg-slate-900/80 rounded-lg border border-slate-800 text-[11px] text-slate-400 leading-relaxed">
+              💡 <strong>기획 Tip</strong>: 메뉴 뎁스(Depth)는 사용자가 3번 이내의 클릭으로 원하는 정보에 도달할 수 있도록 3-Click 룰을 지향하는 것이 좋습니다.
+            </div>
+          </div>
+
+          <!-- 와이어프레임 프리뷰 화면 (8열) -->
+          <div class="md:col-span-8 p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                  <span id="preview-title">와이어프레임: 메인 홈</span>
+                </span>
+                <span class="text-[11px] text-indigo-400 font-mono" id="preview-url">/index.html</span>
+              </div>
+
+              <!-- 가상 브라우저 콘텐츠 -->
+              <div id="preview-box" class="bg-[#0b0f19] border border-slate-800 rounded-xl p-5 min-h-[220px] flex flex-col justify-center">
+                <!-- 동적으로 변경될 영역 -->
+                <div class="text-center py-4">
+                  <span class="text-xs font-semibold px-2 py-1 bg-indigo-500/20 text-indigo-300 rounded mb-2 inline-block">Hero Section</span>
+                  <h3 class="text-lg font-bold text-white mb-2">웹기획과 자바스크립트의 만남</h3>
+                  <p class="text-xs text-slate-400 max-w-sm mx-auto mb-4">구조화된 기획 문서 위에 자바스크립트 로직을 더해 대화형 웹페이지를 완성합니다.</p>
+                  <div class="flex justify-center gap-2">
+                    <div class="w-24 h-7 bg-indigo-600 rounded text-[11px] text-white flex items-center justify-center font-bold">CTA 버튼</div>
+                    <div class="w-24 h-7 bg-slate-800 rounded text-[11px] text-slate-300 flex items-center justify-center border border-slate-700">더 알아보기</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 기획 의도 설명 -->
+            <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-slate-400 flex items-center justify-between">
+              <span id="preview-desc">🎯 <strong>기획 의도</strong>: 서비스의 핵심 가치와 즉각적인 액션(CTA) 유도</span>
+              <span class="text-[10px] text-slate-500 font-mono">Wireframe Preview v1.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 핵심 기술 스택 & 역할 분담 -->
+    <section id="tech-stack" class="py-16 px-4 max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Architecture & Tech Stack</span>
+        <h2 class="text-2xl font-bold text-white mt-1">웹 구축을 지탱하는 기술 요소</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">기획서 상의 아이디어를 실물 소프트웨어로 번역하는 3대 언어와 인프라</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <!-- HTML -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5">
+          <div class="text-red-400 text-2xl mb-3"><i class="fa-brands fa-html5"></i></div>
+          <h3 class="text-base font-bold text-white mb-1">HTML5 (골격)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">콘텐츠의 논리적인 의미와 구조(Semantic Tag)를 규정하는 뼈대</p>
+          <div class="text-[11px] font-mono text-slate-500 bg-slate-900 p-2 rounded">&lt;header&gt;, &lt;main&gt;, &lt;form&gt;</div>
+        </div>
+
+        <!-- CSS -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5">
+          <div class="text-sky-400 text-2xl mb-3"><i class="fa-brands fa-css3-alt"></i></div>
+          <h3 class="text-base font-bold text-white mb-1">CSS3 / Tailwind (시각화)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">기획된 UI 레이아웃, 여백, 컬러 시스템 및 모바일 반응형 렌더링</p>
+          <div class="text-[11px] font-mono text-slate-500 bg-slate-900 p-2 rounded">flex, grid, media-query</div>
+        </div>
+
+        <!-- JS -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5">
+          <div class="text-yellow-400 text-2xl mb-3"><i class="fa-brands fa-js"></i></div>
+          <h3 class="text-base font-bold text-white mb-1">JavaScript (동작)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">변수, 연산자, 이벤트 핸들링으로 사용자 상호작용과 계산 처리</p>
+          <div class="text-[11px] font-mono text-slate-500 bg-slate-900 p-2 rounded">let, const, addEventListener</div>
+        </div>
+
+        <!-- GitHub -->
+        <div class="bg-[#131b2e] border border-slate-800 rounded-xl p-5">
+          <div class="text-slate-300 text-2xl mb-3"><i class="fa-brands fa-github"></i></div>
+          <h3 class="text-base font-bold text-white mb-1">GitHub Pages (호스팅)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">버전 관리와 협업, 그리고 웹 서버 없이 무료로 도메인을 발급받아 배포</p>
+          <div class="text-[11px] font-mono text-slate-500 bg-slate-900 p-2 rounded">git push -> *.github.io</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 기획자 & 구축자 필수 체크리스트 -->
+    <section id="checklist" class="py-12 px-4 max-w-4xl mx-auto border-t border-slate-800">
+      <div class="bg-gradient-to-r from-indigo-950/40 to-slate-900/60 border border-indigo-800/40 rounded-2xl p-6 sm:p-8">
+        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-clipboard-check text-emerald-400"></i> 웹 사이트 배포 전 필수 검수 리스트
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
+          <label class="flex items-center space-x-2.5 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80 cursor-pointer">
+            <input type="checkbox" checked class="rounded text-indigo-600 focus:ring-0">
+            <span>스마트폰/태블릿 반응형 레이아웃 깨짐 점검</span>
+          </label>
+          <label class="flex items-center space-x-2.5 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80 cursor-pointer">
+            <input type="checkbox" checked class="rounded text-indigo-600 focus:ring-0">
+            <span>자바스크립트 콘솔 에러(F12) 발생 여부 점검</span>
+          </label>
+          <label class="flex items-center space-x-2.5 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80 cursor-pointer">
+            <input type="checkbox" checked class="rounded text-indigo-600 focus:ring-0">
+            <span>메타 태그(Title, Description, Favicon) 정의</span>
+          </label>
+          <label class="flex items-center space-x-2.5 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80 cursor-pointer">
+            <input type="checkbox" class="rounded text-indigo-600 focus:ring-0">
+            <span>GitHub Pages 설정 및 공개 링크 정상 작동 확인</span>
+          </label>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
+    <p>© 2026 웹기획및구축 교육과정 포털. All rights reserved.</p>
+  </footer>
+
+  <!-- 인터랙티브 스크립트 -->
+  <script>
+    const screens = {
+      home: {
+        title: '와이어프레임: 메인 홈 (Home)',
+        url: '/index.html',
+        desc: '🎯 <strong>기획 의도</strong>: 서비스의 핵심 가치 명시 및 즉각적인 액션(CTA) 유도',
+        html: `
+          <div class="text-center py-4">
+            <span class="text-xs font-semibold px-2 py-1 bg-indigo-500/20 text-indigo-300 rounded mb-2 inline-block">Hero Section</span>
+            <h3 class="text-lg font-bold text-white mb-2">웹기획과 자바스크립트의 만남</h3>
+            <p class="text-xs text-slate-400 max-w-sm mx-auto mb-4">구조화된 기획 문서 위에 자바스크립트 로직을 더해 대화형 웹페이지를 완성합니다.</p>
+            <div class="flex justify-center gap-2">
+              <div class="w-24 h-7 bg-indigo-600 rounded text-[11px] text-white flex items-center justify-center font-bold">CTA 버튼</div>
+              <div class="w-24 h-7 bg-slate-800 rounded text-[11px] text-slate-300 flex items-center justify-center border border-slate-700">더 알아보기</div>
+            </div>
+          </div>
+        `
+      },
+      about: {
+        title: '와이어프레임: 서비스 소개 (About)',
+        url: '/about.html',
+        desc: '🎯 <strong>기획 의도</strong>: 강의 커리큘럼 소개 및 학습 목표 명확화',
+        html: `
+          <div class="py-2">
+            <span class="text-xs font-semibold px-2 py-1 bg-sky-500/20 text-sky-300 rounded mb-3 inline-block">About Course</span>
+            <h3 class="text-base font-bold text-white mb-3">왜 기획과 구축을 함께 배워야 할까요?</h3>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
+                <div class="font-bold text-indigo-400 mb-1">기획자 관점</div>
+                <div class="text-slate-400 text-[11px]">기술 구현 가능성(Feasibility)을 이해하는 스마트한 기획</div>
+              </div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
+                <div class="font-bold text-emerald-400 mb-1">개발자 관점</div>
+                <div class="text-slate-400 text-[11px]">사용자 시나리오와 비즈니스 목적을 이해하는 주도적 개발</div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      calc: {
+        title: '와이어프레임: JS 실습 계산기 (Lab)',
+        url: '/calc.html',
+        desc: '🎯 <strong>기획 의도</strong>: 앞서 다룬 JS 변수와 연산자를 직접 조작하는 실습 인터페이스',
+        html: `
+          <div class="py-2 max-w-xs mx-auto text-center">
+            <span class="text-xs font-semibold px-2 py-1 bg-amber-500/20 text-amber-300 rounded mb-2 inline-block">Interactive Calculator</span>
+            <div class="bg-slate-900 p-3 rounded-lg border border-slate-800 mt-2">
+              <div class="flex gap-2 mb-2">
+                <input type="number" id="sim-a" value="10" class="w-1/2 bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs text-center text-white" placeholder="A">
+                <span class="text-slate-500 self-center">+</span>
+                <input type="number" id="sim-b" value="20" class="w-1/2 bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs text-center text-white" placeholder="B">
+              </div>
+              <button onclick="calcDemo()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold py-1.5 rounded transition">
+                JS 덧셈 연산자 계산하기
+              </button>
+              <div id="sim-result" class="mt-2 text-xs font-mono text-emerald-400 font-bold">결과: 30</div>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    function changeScreen(key) {
+      ['home', 'about', 'calc'].forEach(k => {
+        const btn = document.getElementById(`btn-${k}`);
+        if (k === key) {
+          btn.className = "w-full text-left px-3 py-2.5 rounded-lg bg-indigo-600 text-white font-semibold flex items-center justify-between transition";
+          btn.querySelector('i').className = "fa-solid fa-chevron-right text-xs text-white";
+        } else {
+          btn.className = "w-full text-left px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 flex items-center justify-between transition";
+          btn.querySelector('i').className = "fa-solid fa-chevron-right text-xs text-slate-600";
+        }
+      });
+
+      const data = screens[key];
+      document.getElementById('preview-title').innerText = data.title;
+      document.getElementById('preview-url').innerText = data.url;
+      document.getElementById('preview-desc').innerHTML = data.desc;
+      document.getElementById('preview-box').innerHTML = data.html;
+    }
+
+    function calcDemo() {
+      const a = Number(document.getElementById('sim-a').value) || 0;
+      const b = Number(document.getElementById('sim-b').value) || 0;
+      document.getElementById('sim-result').innerText = `결과: ${a + b} (let result = ${a} + ${b})`;
+    }
+  </script>
+</body>
+</html>
