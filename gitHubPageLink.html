@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹기획 및 구축 | GitHub Pages 배포 가이드</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap');
+    body { font-family: 'Pretendard', sans-serif; }
+    code, pre { font-family: 'Fira Code', monospace; }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-200 min-h-screen flex flex-col justify-between antialiased">
+
+  <!-- 헤더 네비게이션 -->
+  <header class="border-b border-slate-800 bg-[#0f172a]/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-lg shadow-md shadow-indigo-500/20">
+          <i class="fa-brands fa-github text-xl"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-white text-base tracking-tight">웹기획 및 구축</span>
+          <span class="text-[10px] text-sky-400 font-mono tracking-wider">GITHUB PAGES DEPLOY</span>
+        </div>
+      </div>
+      <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full font-semibold flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        실습 가이드
+      </span>
+    </div>
+  </header>
+
+  <!-- 메인 본문 -->
+  <main class="max-w-4xl mx-auto px-4 py-12 flex-1 w-full space-y-12">
+    <!-- 인트로 섹션 -->
+    <section class="text-center max-w-2xl mx-auto">
+      <div class="inline-flex items-center space-x-2 text-xs font-semibold text-indigo-400 bg-indigo-950/60 px-3.5 py-1.5 rounded-full border border-indigo-800/50 mb-4">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <span>정적 웹사이트 무료 호스팅 실습</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        GitHub Pages로 웹사이트 배포하기
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+        깃허브(GitHub)의 무료 호스팅 서비스인 <strong class="text-white">GitHub Pages</strong>를 이용하면 정적 웹사이트를 쉽고 빠르게 무료로 배포할 수 있습니다.<br class="hidden sm:inline">
+        아래의 4단계를 차례대로 따라 진행해 보세요.
+      </p>
+    </section>
+
+    <!-- 4단계 가이드 카드 섹션 -->
+    <section class="space-y-6">
+      
+      <!-- 1단계 -->
+      <div class="bg-[#111927] border border-slate-800 rounded-2xl p-6 sm:p-7 hover:border-indigo-500/40 transition">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-lg bg-indigo-600/20 text-indigo-400 font-bold font-mono text-sm flex items-center justify-center border border-indigo-500/30">01</span>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-folder-plus text-indigo-400"></i> 저장소(Repository) 생성하기
+          </h2>
+        </div>
+        <ul class="space-y-2.5 text-sm text-slate-300 pl-2 sm:pl-11">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span>GitHub에 로그인한 후 우측 상단의 <strong>'+'</strong> 아이콘을 눌러 <strong>'New repository'</strong>를 선택합니다.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span><strong>저장소 이름(Repository name)</strong>을 입력합니다.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-amber-400 mt-1 text-xs shrink-0"></i>
+            <span>반드시 <strong>Public(공개)</strong>으로 설정해야 무료 배포가 가능합니다.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span><strong>'Add a README file'</strong>에 체크한 뒤 <strong>'Create repository'</strong>를 누릅니다.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2단계 -->
+      <div class="bg-[#111927] border border-slate-800 rounded-2xl p-6 sm:p-7 hover:border-sky-500/40 transition">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-lg bg-sky-600/20 text-sky-400 font-bold font-mono text-sm flex items-center justify-center border border-sky-500/30">02</span>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-file-code text-sky-400"></i> 웹사이트 파일 업로드하기
+          </h2>
+        </div>
+        <ul class="space-y-2.5 text-sm text-slate-300 pl-2 sm:pl-11">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span>HTML 기본 파일인 <code class="bg-[#0b0f19] px-2 py-0.5 rounded text-emerald-400 text-xs border border-slate-800">index.html</code> 파일을 저장소 루트(최상단) 디렉토리에 업로드하거나 생성합니다.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span><code class="bg-[#0b0f19] px-2 py-0.5 rounded text-emerald-400 text-xs border border-slate-800">index.html</code>이 웹사이트의 첫 화면(진입점) 역할을 합니다.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3단계 -->
+      <div class="bg-[#111927] border border-slate-800 rounded-2xl p-6 sm:p-7 hover:border-amber-500/40 transition">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-lg bg-amber-600/20 text-amber-400 font-bold font-mono text-sm flex items-center justify-center border border-amber-500/30">03</span>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-sliders text-amber-400"></i> GitHub Pages 활성화하기
+          </h2>
+        </div>
+        <ul class="space-y-2.5 text-sm text-slate-300 pl-2 sm:pl-11">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span>생성한 저장소 페이지 상단의 <strong>Settings(설정)</strong> 탭을 클릭합니다.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span>왼쪽 메뉴에서 <strong>Pages</strong>를 선택합니다.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span><strong>Build and deployment</strong> 섹션의 Branch 설정을 None에서 <strong>main</strong>(또는 master) 브랜치와 루트 폴더(<strong>/ (root)</strong>)로 변경합니다.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span><strong>Save</strong> 버튼을 누릅니다.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 4단계 -->
+      <div class="bg-[#111927] border border-slate-800 rounded-2xl p-6 sm:p-7 hover:border-emerald-500/40 transition">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-lg bg-emerald-600/20 text-emerald-400 font-bold font-mono text-sm flex items-center justify-center border border-emerald-500/30">04</span>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400"></i> 배포 완료 확인하기
+          </h2>
+        </div>
+        <ul class="space-y-2.5 text-sm text-slate-300 pl-2 sm:pl-11">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span>1~2분 정도 기다린 후 페이지를 새로고침하면 상단에 배포된 웹사이트 주소(<code class="bg-[#0b0f19] px-2 py-0.5 rounded text-sky-400 text-xs border border-slate-800">https://&lt;사용자이름&gt;.github.io/&lt;저장소이름&gt;</code>)가 나타납니다.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-sky-400 mt-1 text-xs shrink-0"></i>
+            <span>해당 주소를 클릭해 웹사이트가 정상적으로 배포되었는지 확인합니다.</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- 인터랙티브: 배포 주소 자동 생성 계산기 -->
+    <section class="bg-gradient-to-r from-indigo-950/40 via-slate-900/60 to-sky-950/40 border border-slate-800 rounded-2xl p-6 sm:p-8">
+      <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+        <i class="fa-solid fa-link text-indigo-400"></i> 내 배포 주소 미리 생성해보기
+      </h3>
+      <p class="text-xs text-slate-400 mb-5">
+        사용자 이름과 저장소 이름을 입력하면 실제로 발급될 최종 웹 주소를 확인할 수 있습니다.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-400 mb-1">GitHub 사용자 이름 (Username)</label>
+          <input type="text" id="username" oninput="calculateUrl()" placeholder="예: student-id" class="w-full bg-[#0b0f19] border border-slate-700 text-xs px-3.5 py-2.5 rounded-lg text-white outline-none focus:border-indigo-500">
+        </div>
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-400 mb-1">저장소 이름 (Repository name)</label>
+          <input type="text" id="reponame" oninput="calculateUrl()" placeholder="예: web-project" class="w-full bg-[#0b0f19] border border-slate-700 text-xs px-3.5 py-2.5 rounded-lg text-white outline-none focus:border-indigo-500">
+        </div>
+      </div>
+
+      <div class="bg-[#0b0f19] border border-slate-800 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="text-xs">
+          <span class="text-slate-400 block mb-0.5">최종 서비스 URL:</span>
+          <span id="final-url" class="font-mono text-emerald-400 font-semibold break-all">https://&lt;사용자이름&gt;.github.io/&lt;저장소이름&gt;</span>
+        </div>
+        <button onclick="copyUrl()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-2 rounded-lg transition shrink-0 flex items-center justify-center gap-1.5">
+          <i class="fa-regular fa-copy"></i>
+          <span>주소 복사</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
+    <p>© 웹기획 및 구축 실습 가이드 | Powered by GitHub Pages</p>
+  </footer>
+
+  <!-- 실시간 URL 생성 스크립트 -->
+  <script>
+    function calculateUrl() {
+      const user = document.getElementById('username').value.trim();
+      const repo = document.getElementById('reponame').value.trim();
+      const output = document.getElementById('final-url');
+
+      if (!user && !repo) {
+        output.innerText = 'https://<사용자이름>.github.io/<저장소이름>';
+      } else {
+        const u = user || '<사용자이름>';
+        const r = repo || '<저장소이름>';
+        output.innerText = `https://${u}.github.io/${r}/`;
+      }
+    }
+
+    function copyUrl() {
+      const urlText = document.getElementById('final-url').innerText;
+      if (urlText.includes('<')) {
+        alert('사용자 이름과 저장소 이름을 먼저 입력해 주세요.');
+        return;
+      }
+      navigator.clipboard.writeText(urlText).then(() => {
+        alert('배포 주소가 클립보드에 복사되었습니다:\n' + urlText);
+      });
+    }
+  </script>
+</body>
+</html>
